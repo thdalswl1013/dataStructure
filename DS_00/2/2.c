@@ -6,10 +6,10 @@
 int main(void)
 {
 	FILE* fp1;
-	fp1 = fopen("input1.txt", "r");
+	fp1 = fopen("input-1.txt", "r");
 
 	FILE* fp2;
-	fp2 = fopen("input2.txt", "r");
+	fp2 = fopen("input-2.txt", "r");
 
 
 	/*1st*/
@@ -20,7 +20,6 @@ int main(void)
 	while (!feof(fp1))
 	{
 		fscanf_s(fp1, "%d", &data1[i++]);
-		//printf("%d, ", input1);
 	}
 
 	for (int i = 0; i < 10; i++)
@@ -29,8 +28,8 @@ int main(void)
 	}
 	printf("\n");
 
-	/*2nd*/
 
+	/*2nd*/
 	int input2;
 	int data2[10] = { 0 };
 
@@ -38,7 +37,6 @@ int main(void)
 	while (!feof(fp2))
 	{
 		fscanf_s(fp2, "%d", &data2[i++]);
-		//printf("%d, ", input2);
 	}
 
 	for (int i = 0; i < 10; i++)

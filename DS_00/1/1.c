@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-int sum(int a, int b)
+int add(int num1, int num2)
 {
-	return a + b;
+	return num1 + num2;
 }
 
-int mul(int a, int b)
+int mul(int num1, int num2)
 {
-	return a * b;
+	return num1 * num2;
 }
 
 
@@ -22,7 +22,7 @@ int main(void)
 	scanf("%d %d", &num1, &num2);
 
 	printf("µÎ ¼öÀÇ µ¡¼À °á°ú : ");
-	printf("%d\n", sum(num1, num2));
+	printf("%d\n", add(num1, num2));
 
 	printf("µÎ ¼öÀÇ °ö¼À °á°ú : ");
 	printf("%d\n", mul(num1, num2));

@@ -26,7 +26,7 @@ int main()
 	printf("문자열 입력 : ");
 	gets_s(text, sizeof(text));
 
-	printf("\n자음만 대문자로 변환 결과 : ");
+	printf("자음만 대문자로 변환 결과 : ");
 
 	while (*p != NULL)
 	{
