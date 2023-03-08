@@ -1,0 +1,4 @@
+﻿  2.c
+C:\Users\minji\Documents\vs_c\DS_00\2\2.c(34,6): warning C4101: 'input2' :참조되지 않은 지역 변수입니다.
+C:\Users\minji\Documents\vs_c\DS_00\2\2.c(16,6): warning C4101: 'input1' :참조되지 않은 지역 변수입니다.
+  2.vcxproj -> C:\Users\minji\Documents\vs_c\DS_00\x64\Debug\2.exe
