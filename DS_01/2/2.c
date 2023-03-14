@@ -1,37 +1,66 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <time.h>
-#include "selectionSort.h"
-#define MAX_SIZE 2001
+#include <string.h>
 
-void main(void)
+int main(void)
 {
-	int i, n, step = 10;
-	int a[MAX_SIZE];
-	double duration;
-	clock_t start;
+	FILE* fp1;
+	fp1 = fopen("input-1.txt", "r");
 
-	FILE* fp;
-	fopen_s(&fp, "output.txt", "w");
-	printf("      n        time\n");
-	fprintf(fp, "      n        time\n");
+	FILE* fp2;
+	fp2 = fopen("input-2.txt", "r");
 
-	for (n = 0; n <= 2000; n += step)
+
+	/*1st*/
+	int input1;
+	int data1[10] = { 0 };
+
+	int i = 0;
+	while (!feof(fp1))
 	{
-		for (i = 0; i < n; i++)
-			a[i] = n - i;
-
-		start = clock();
-		sort(a, n);
-		duration = ((double)(clock() - start)) / CLOCKS_PER_SEC;
-		printf("%6d   %f\n", n, duration);
-		fprintf(fp, "%6d       %f\n", n, duration);
-
-		if (n == 100)
-			step = 100;
+		fscanf_s(fp1, "%d", &data1[i++]);
 	}
 
-	fclose(fp);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%4d, ", data1[i]);
+	}
+	printf("\n");
+
+
+	/*2nd*/
+	int input2;
+	int data2[10] = { 0 };
+
+	i = 0;
+	while (!feof(fp2))
+	{
+		fscanf_s(fp2, "%d", &data2[i++]);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%4d, ", data2[i]);
+	}
+
+	fclose(fp1);
+	fclose(fp2);
+
+	printf("\n");
+
+
+	int	data3[10] = { 0 };
+	for (int i = 0; i < 10; i++)
+	{
+		data3[i] = data1[i] + data2[i];
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%4d, ", data3[i]);
+	}
+
+
+	return 0;
 }

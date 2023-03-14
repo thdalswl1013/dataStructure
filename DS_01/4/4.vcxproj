@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6a56d195-09f1-4cb2-8a02-c93720c6cadd}</ProjectGuid>
+    <ProjectGuid>{7294700d-b717-4e9c-98cf-fe453fb9b567}</ProjectGuid>
     <RootNamespace>My4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -128,12 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="4.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="selectionSort.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

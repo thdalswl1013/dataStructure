@@ -20,12 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="selectionSort.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="output.txt">
+    <Text Include="input.txt">
       <Filter>소스 파일</Filter>
     </Text>
   </ItemGroup>

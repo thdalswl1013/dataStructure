@@ -1,3 +1,0 @@
-﻿  3.c
-C:\Users\minji\Documents\vs_c\DS_00\3\3.c(28,37): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  3.vcxproj -> C:\Users\minji\Documents\vs_c\DS_00\x64\Debug\3.exe
