@@ -1,0 +1,5 @@
+﻿  3-2.c
+C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\3-2\3-2.c(15,38): warning C4047: '=': 'int **'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\3-2\3-2.c(27,12): warning C4047: 'return': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\3-2\3-2.c(37,31): warning C4047: '=': 'int **'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+  3-2.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\x64\Debug\3-2.exe
