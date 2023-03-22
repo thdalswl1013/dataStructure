@@ -15,6 +15,7 @@ int main(void)
 	element stack[MAX_STACK_SIZE];
 	char* word = NULL;
 	char input[80];
+
 	int top = -1;
 
 
@@ -23,7 +24,7 @@ int main(void)
 
 	printf("<< Stack operations where MAX_STACK_SIZE is 5 >>\n");
 	printf("The format of the stack operation is as follows!!\n");
-	//printf("push 1 Jung\npop\n");
+	printf("push 1 Jung\npop\n");
 	printf("\n*************************************************\n");
 
 	/*
@@ -33,7 +34,7 @@ int main(void)
 	quit // 프로그램 수행 종료. 잘못된 명령어 // 메시지 오류를 출력
 	*/
 
-	for (int i = 0; i < 20; i++)
+	while(1)
 	{
 		//char *fgets (char *string, int n, FILE *stream);
 		fgets(input, sizeof(input), fp);
