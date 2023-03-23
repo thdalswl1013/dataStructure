@@ -31,7 +31,8 @@ int main(void)
 	push id name // stack에 데이터 삽입, full이면 스택 안의 내용을 출력하고 종료
 	pop // stack에 데이터 삭제, empty이면 오류 메시지를 출력하고 종료
 	sprint // stack의 내용을 프린트
-	quit // 프로그램 수행 종료. 잘못된 명령어 // 메시지 오류를 출력
+	quit // 프로그램 수행 종료. 
+	잘못된 명령어 // 메시지 오류를 출력
 	*/
 
 	while(1)
