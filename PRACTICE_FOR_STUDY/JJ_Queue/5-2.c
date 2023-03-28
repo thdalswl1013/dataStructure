@@ -36,17 +36,39 @@ int main(void)
 		/***********************************/
 		if (strcmp(word, "add") == 0)
 		{
+			// queue에 데이터 삽입, 큐가 full이면 full 메시지를 출력하고, 
+			// 큐 안의 데이터를 이동해야 할 경우 “data shift”메세지를 출력해야 함.
 
-			if (rear == MAX_QUEUE_SIZE-1)
-				printf("Queue full\n");
-
-			else
+			if ((rear == MAX_QUEUE_SIZE - 1) && (front == -1)) // queue full
 			{
-				rear++;
-				sscanf(input + sizeof(word) + 1, "%d %s\n", &queue[rear].id, &queue[rear].name);
+				printf("Queue full\n");
 
 			}
 
+			else if ((rear == MAX_QUEUE_SIZE - 1) && (front > -1)) // queue data shift
+			{
+				printf("data shift\n");
+
+				int num = rear - (front + 1);
+				int temp = front + 1;
+
+				for (int i = 0; i < num + 1; i++)
+				{
+					queue[i] = queue[temp++];
+				}
+				front = -1;
+				rear = num;
+				rear++;
+				sscanf(input + strlen(word) + 1, "%d %s\n", &(queue + rear)->id, &(queue + rear)->name);
+
+			}
+			else
+			{
+				rear++;
+				sscanf(input + strlen(word) + 1, "%d %s\n", &(queue+rear)->id, &(queue+rear)->name);
+
+			}
+			
 		}
 		/***********************************/
 
@@ -66,10 +88,11 @@ int main(void)
 
 		else if (strcmp(word, "qprint") == 0)
 		{
-			for (int i = front; i < rear + 1; i++)
+			for (int i = front+1; i < rear + 1; i++)
 			{
-				printf("%d %s", queue[i].id, queue[i].name);
+				printf("%d %s\n", queue[i].id, queue[i].name);
 			}
+			printf("\n");
 
 		}
 
@@ -84,6 +107,7 @@ int main(void)
 		else
 		{
 			printf("Wrong Command! Try again!\n");
+			printf("\n");
 		}
 
 
