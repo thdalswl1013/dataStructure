@@ -1,120 +1,78 @@
+// stack
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+#define MAX_STACK_SIZE 5
+#define MAX_NAME_SIZE 10
+
 typedef struct
 {
-	int row;
-	int col;
-	int value;
-}matrix_n;
+	int id;
+	char name[MAX_NAME_SIZE];
+}element;
 
-matrix_n a[9];
+element stack[MAX_STACK_SIZE];
 
+int top = -1;
 
 int main(void)
 {
 	FILE* fp;
 	fp = fopen("a.txt", "r");
-
-	fscanf(fp, "%d %d %d\n", &a[0].row, &a[0].col, &a[0].value); // 6 6 8
-
-	for (int i = 1; i < 9; i++) // row col value 값들
-		fscanf(fp, "%d %d %d\n", &a[i].row, &a[i].col, &a[i].value);
-
-
-
-
-
-
-
-	printf("A\n");
 	
-	int arr[6][6];
-	int x = 1;
+	char input[80];
+	char* word = NULL;
 
-
-	for (int i = 0; i < a[0].row; i++)
+	while (1)
 	{
-		for (int j = 0; j < a[0].col; j++)
-		{
-			if (i == a[x].row && j == a[x].col)
-				arr[i][j] = a[x++].value;
-			else	
-				arr[i][j] = 0;
+		fgets(input, sizeof(input), fp);
+		word = strtok(input, " \n");
 
-			printf("%3d", arr[i][j]);
+
+		if (strcmp(word, "push") == 0)
+		{
+			if (top == MAX_STACK_SIZE - 1)
+			{
+				printf("Stack full!\n");
+
+				for (int i = top - 1; i >= 0; i--)
+					printf("%d %s", stack[i].id, stack[i].name);
+
+				break;
+
+			}
+			else
+			{
+				top++;
+				sscanf(input + strlen(word) + 1, "%d %s", &stack[top].id, &stack[top].name);
+			}
+		}
+
+		else if (strcmp(word, "pop") == 0)
+		{
+			if (top == -1)
+				printf("stack is empty\n");
+
+			top--;
+		}
+
+		else if (strcmp(word, "sprint") == 0)
+		{
+			for (int i = top - 1; i >= 0; i--)
+				printf("%d %s", stack[i].id, stack[i].name);
 
 		}
-		printf("\n");
-	}
 
-
-
-	return 0;
-}
-
-
-
-/* 4-1
-int main(void)
-{
-	int num;
-	printf("원소의 개수를 입력하세요: ");
-	scanf("%d", &num);
-
-	printf("Random Generated Matrix\n");
-
-	int arr[20][20];
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 20; j++)
-		{
-			arr[i][j] = 0;
-			//printf("%3d", arr[i][j]);
-		}
-		//printf("\n");
-	}
-
-	int row;
-	int col;
-
-	for (int i = 0; i < num; i++)
-	{
-		row = rand() % 20;
-		col = rand() % 20;
-
-		if (arr[row][col] == 0)
-			arr[row][col] = rand() % 100;
+		else if (strcmp(word, "quit") == 0)
+			break;
 
 		else
-			i--;
+			printf("Wrong Command! Try again!\n");
 	}
 
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 20; j++)
-		{
-			printf("%3d", arr[i][j]);
-		}
-		printf("\n");
-	}
-
-
-	printf("\n");
-	printf("Sparse matrix\n");
-	printf(" 20  20 %3d\n", num);
-
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 20; j++)
-		{
-			if (arr[i][j] != 0)
-				printf("%3d %3d %3d\n", i, j, arr[i][j]);
-		}
-	}
-
+	fclose(fp);
 	return 0;
 }
-*/
