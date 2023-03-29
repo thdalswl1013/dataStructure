@@ -1,0 +1,4 @@
+﻿  1.c
+C:\Users\minji\Documents\vs_c\DS_07\1\1.c(36,6): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+C:\Users\minji\Documents\vs_c\DS_07\1\1.c(121,6): warning C4101: 'item' :참조되지 않은 지역 변수입니다.
+  1.vcxproj -> C:\Users\minji\Documents\vs_c\DS_07\x64\Debug\1.exe
