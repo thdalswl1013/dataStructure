@@ -6,6 +6,7 @@
 
 
 typedef struct listNode* listPointer;
+
 struct listNode
 {
 	int data; // 데이터 필드
@@ -62,6 +63,36 @@ int main(void)
 	printf("\nThe ordered list contains: \n");
 
 
+	listPointer cur, ffirst, temp2;
+	cur = first;
+	ffirst = NULL;
+
+	while (cur != NULL)
+	{
+		if (cur->data % 2 == 1)
+		{
+			temp2 = cur->link;
+			delete(&first, &ffirst, cur);
+			cur = temp2;
+		}
+		else
+		{
+			if (ffirst == NULL)
+			{
+				cur = cur->link;
+				ffirst = first;
+			}
+			else
+			{
+				cur = cur->link;
+				ffirst = ffirst->link;
+			}
+
+		}
+	}
+
+	printList(first);
+
 
 	return 0;
 }
@@ -100,7 +131,6 @@ void delete(listPointer* first, listPointer* trail, listPointer x)
 }
 
 void printList(listPointer first)
-
 {
 
 	int i = 0;
@@ -111,10 +141,7 @@ void printList(listPointer first)
 	{
 		if (i % 3 == 0)
 			printf("\n");
-		printf("(%8o %4d %8o) ", first, first->data, first->link);
+		printf("(%.10o %4d %.11o) ", first, first->data, first->link);
 		i += 1;
 	}
-
-
-
 }

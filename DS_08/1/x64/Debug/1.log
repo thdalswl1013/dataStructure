@@ -1,6 +1,6 @@
 ﻿  1.c
-C:\Users\minji\Documents\vs_c\DS_08\1\1.c(115,10): warning C4477: 'printf' : 서식 문자열 '%8o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'listPointer'입니다.
-C:\Users\minji\Documents\vs_c\DS_08\1\1.c(115,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listPointer' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\minji\Documents\vs_c\DS_08\1\1.c(115,10): warning C4477: 'printf' : 서식 문자열 '%8o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'listPointer'입니다.
-C:\Users\minji\Documents\vs_c\DS_08\1\1.c(115,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listPointer' 형식의 인수 3과(와) 충돌합니다.
+C:\Users\minji\Documents\vs_c\DS_08\1\1.c(144,10): warning C4477: 'printf' : 서식 문자열 '%.10o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'listPointer'입니다.
+C:\Users\minji\Documents\vs_c\DS_08\1\1.c(144,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listPointer' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\minji\Documents\vs_c\DS_08\1\1.c(144,10): warning C4477: 'printf' : 서식 문자열 '%.11o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'listPointer'입니다.
+C:\Users\minji\Documents\vs_c\DS_08\1\1.c(144,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listPointer' 형식의 인수 3과(와) 충돌합니다.
   1.vcxproj -> C:\Users\minji\Documents\vs_c\DS_08\x64\Debug\1.exe

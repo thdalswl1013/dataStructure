@@ -1,0 +1,11 @@
+﻿  2.c
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(48,22): warning C4047: '함수': 'listNode *'의 간접 참조 수준이 'listNode **'과(와) 다릅니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(48,17): warning C4024: 'insert': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(53,23): warning C4047: '함수': 'listNode *'의 간접 참조 수준이 'listNode **'과(와) 다릅니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(53,18): warning C4024: 'insert': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(98,56): warning C4028: 정식 매개 변수 2이(가) 선언과 다릅니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(139,10): warning C4477: 'printf' : 서식 문자열 '%.10o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'listNode *'입니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(139,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listNode *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(139,10): warning C4477: 'printf' : 서식 문자열 '%.11o'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'listNode *'입니다.
+C:\Users\minji\Documents\vs_c\DS_08\2\2.c(139,10): warning C4313: 'printf': 서식 문자열의 '%o'이(가) listNode *' 형식의 인수 3과(와) 충돌합니다.
+  2.vcxproj -> C:\Users\minji\Documents\vs_c\DS_08\x64\Debug\2.exe
