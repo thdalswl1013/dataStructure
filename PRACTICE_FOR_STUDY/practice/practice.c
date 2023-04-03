@@ -1,78 +1,52 @@
-// stack
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-#define MAX_STACK_SIZE 5
-#define MAX_NAME_SIZE 10
+#define TRUE 1
+#define FALSE 0
 
-typedef struct
+/*
+int main(void)
 {
-	int id;
-	char name[MAX_NAME_SIZE];
-}element;
+	int num;
+	printf("일차원 배열의 수를 입력하세요: ");
+	scanf("%d", &num);
 
-element stack[MAX_STACK_SIZE];
+	for (int i = 0; i < num; i++)
+	{
+		printf("ipp[%2d] = %2d ", i, rand() % 100);
 
-int top = -1;
+		if (i%5==4)
+			printf("\n");
+	}
+
+	return 0;
+}
+*/
+
+int make1dArray(int num)
+{
+	int* arr;
+	arr=malloc( sizeof(int), )
+
+}
 
 int main(void)
 {
-	FILE* fp;
-	fp = fopen("a.txt", "r");
-	
-	char input[80];
-	char* word = NULL;
+	int* ipp;
+	int i, num;
 
-	while (1)
+	printf("일차원 배열의 수를 입력하세요: ");
+	scanf("%d", &num);
+
+	ipp = make1dArray(num);
+
+	for (i = 0; i < num; i++) 
 	{
-		fgets(input, sizeof(input), fp);
-		word = strtok(input, " \n");
-
-
-		if (strcmp(word, "push") == 0)
-		{
-			if (top == MAX_STACK_SIZE - 1)
-			{
-				printf("Stack full!\n");
-
-				for (int i = top - 1; i >= 0; i--)
-					printf("%d %s", stack[i].id, stack[i].name);
-
-				break;
-
-			}
-			else
-			{
-				top++;
-				sscanf(input + strlen(word) + 1, "%d %s", &stack[top].id, &stack[top].name);
-			}
-		}
-
-		else if (strcmp(word, "pop") == 0)
-		{
-			if (top == -1)
-				printf("stack is empty\n");
-
-			top--;
-		}
-
-		else if (strcmp(word, "sprint") == 0)
-		{
-			for (int i = top - 1; i >= 0; i--)
-				printf("%d %s", stack[i].id, stack[i].name);
-
-		}
-
-		else if (strcmp(word, "quit") == 0)
-			break;
-
-		else
-			printf("Wrong Command! Try again!\n");
+		printf("ipp[%2d] =%2d ", i, ipp[i]);
+		if ((i % 5) == 4)
+			printf("\n");
 	}
 
-	fclose(fp);
 	return 0;
 }

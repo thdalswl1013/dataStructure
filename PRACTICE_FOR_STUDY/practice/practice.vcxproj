@@ -130,7 +130,7 @@
     <ClCompile Include="practice.c" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="a.txt" />
+    <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
