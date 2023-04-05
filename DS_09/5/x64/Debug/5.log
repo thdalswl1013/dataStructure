@@ -1,0 +1,3 @@
+﻿  5.c
+C:\Users\minji\Documents\vs_c\DS_09\5\5.c(109,30): warning C4101: 'lastC' :참조되지 않은 지역 변수입니다.
+  5.vcxproj -> C:\Users\minji\Documents\vs_c\DS_09\x64\Debug\5.exe
