@@ -38,12 +38,12 @@ polynomial padd(polynomial a, polynomial b)
 	////////////////////////////////////////////////
 	if (a.degree < b.degree)
 	{
-		num = b.degree - a.degree;
-		min = a.degree;
-		c.degree = b.degree;
+		num = b.degree - a.degree; //1
+		min = a.degree; //3
+		c.degree = b.degree; //4
 
 		for (i = 0; i < num; i++)
-			c.coef[i] = b.coef[i];
+			c.coef[i] = b.coef[i]; //c.coef[0]=1
 		
 	}
 	////////////////////////////////////////////////
