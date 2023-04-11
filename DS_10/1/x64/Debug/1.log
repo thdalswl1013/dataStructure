@@ -1,0 +1,4 @@
+﻿  1.c
+C:\Users\minji\Documents\vs_c\DS_10\1\1.c(24,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'node' 왼쪽은 무시됩니다.
+C:\Users\minji\Documents\vs_c\DS_10\1\1.c(40,17): warning C4101: 'y' :참조되지 않은 지역 변수입니다.
+  1.vcxproj -> C:\Users\minji\Documents\vs_c\DS_10\x64\Debug\1.exe
