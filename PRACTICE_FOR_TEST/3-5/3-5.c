@@ -1,8 +1,13 @@
+/*
+	배열로 만들되, 계수가 0인 값은 고려하지 않는 방식 
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #define MAX_TERMS 100
+#define COMPARE(x,y) (((x)<(y)) ? -1 : ((x)==(y)) ? 0 : 1)
 
 typedef struct
 {
@@ -21,10 +26,20 @@ void terms_print(char AX[], term* terms, int start, int item)
 
 }
 
-void padd(int a_item, int b_item)
+void padd(int itemA, int itemB)
 {
+	int startA = 0;
+	int startB = itemA;
 
+	int finishA = itemA - 1;
+	int finishB = itemA + itemB - 1;
+	int avail = itemA + itemB;
 
+	while (startA <= finishA && startB <= finishB) //두 다항식이 끝나지 않을 때까지 반복
+	{
+		
+
+	}
 
 
 

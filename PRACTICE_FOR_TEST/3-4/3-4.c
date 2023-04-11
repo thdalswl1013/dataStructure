@@ -1,3 +1,9 @@
+/*
+	배열로 만들어서 계수가 0인 값도 생각하는 방식
+	ex) 2x^100 + 1			 -> 배열: 2  0  0  0  0  0  0  0 ... 0  0  0  0  0  1
+	ex) x^4+ 10x^3 + 3x^2 +1 -> 배열: 1 10  3  0  1
+*/ 
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
@@ -28,56 +34,21 @@ void poly_print(char ax[], polynomial a)
 
 polynomial padd(polynomial a, polynomial b)
 {
-	polynomial c;
 
-	int min = 0;
-	int num = 0;
 
-	int i, j;
 
-	////////////////////////////////////////////////
-	if (a.degree < b.degree)
-	{
-		num = b.degree - a.degree; //1
-		min = a.degree; //3
-		c.degree = b.degree; //4
 
-		for (i = 0; i < num; i++)
-			c.coef[i] = b.coef[i]; //c.coef[0]=1
-		
-	}
-	////////////////////////////////////////////////
 
-	else if (a.degree > b.degree)
-	{
-		num = a.degree - b.degree;
-		min = b.degree;
-		c.degree = a.degree;
 
-		for (i = 0; i < num; i++)
-			c.coef[i] = a.coef[i];
-	}
 
-	else if (a.degree = b.degree)
-	{
-		c.degree = a.degree;
-		min = a.degree;
-	}
 
-	for (j = 0; j <= min; j++)
-	{
-		c.coef[i] = a.coef[j] + b.coef[i];
-		i++;
-	}
 
-	return c;
+
 
 }
 
 int main(void)
 {
-
-
 	printf("<< C(x) = A(x) + B(x) >>\n");
 
 	polynomial a, b;

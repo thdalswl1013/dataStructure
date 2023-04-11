@@ -15,7 +15,6 @@ typedef struct
 {
 	int row;
 	int col;
-
 	int value;
 }matrixstructure;
 
@@ -24,11 +23,16 @@ void fastTranspose(matrixstructure a[], matrixstructure b[])
 {
 	int rowTerms[MAX_COL];
 	int startingPos[MAX_COL];
-	int i, j, numCols = a[0].col, numTerms = a[0].value;
+	startingPos[0] = 1;
+
+	int numCols = a[0].col;
+	int numTerms = a[0].value;
 
 	b[0].row = numCols;
 	b[0].col = a[0].row;
 	b[0].value = numTerms;
+
+	int i, j;
 
 	if (numTerms > 0)
 	{
@@ -38,7 +42,6 @@ void fastTranspose(matrixstructure a[], matrixstructure b[])
 		for (i = 1; i <= numTerms; i++)
 			rowTerms[a[i].col]++;
 
-		startingPos[0] = 1;
 
 		for (i = 1; i < numCols; i++)
 			startingPos[i] = startingPos[i - 1] + rowTerms[i - 1];
@@ -46,6 +49,7 @@ void fastTranspose(matrixstructure a[], matrixstructure b[])
 		for (i = 1; i <= numTerms; i++)
 		{
 			j = startingPos[a[i].col]++;
+
 			b[j].row = a[i].col;
 			b[j].col = a[i].row;
 			b[j].value = a[i].value;
