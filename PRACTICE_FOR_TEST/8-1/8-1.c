@@ -78,11 +78,9 @@ int main(void)
 	{
 		if (trav->data % 2==1)
 		{
-			if(trav==first)
-				ndelete(&first, trav, trace);
+			ndelete(&first, trav, trace);
 		}
 
-		trace = trav;
 	}
 
 	for (listPointer trav = first; trav; trav = trav->link)

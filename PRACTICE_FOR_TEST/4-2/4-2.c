@@ -1,4 +1,3 @@
-
 //fastTranspose를 이용하여 전치행렬 구현하기 
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -12,12 +11,12 @@ typedef struct
 	int row;
 	int col;
 	int value;
-}matrix_element;
+}matrixA;
 
-void fastTranspose(matrix_element a[], matrix_element b[])
+void fastTranspose(matrixA a[], matrixA b[])/////////////////////////////////////////////////////
 {
-	int rowTerms[MAX_COL];
-	int startingPos[MAX_COL];
+	int rowTerms[10];
+	int startingPos[10];
 	startingPos[0] = 1;
 
 	// 제일 첫 줄
@@ -31,20 +30,14 @@ void fastTranspose(matrix_element a[], matrix_element b[])
 
 		//rowTerms 계산
 		for (int i = 0; i < a[0].col; i++)
-		{
 			rowTerms[i] = 0;
-		}
 
 		for (int i = 1; i <= a[0].value; i++)
-		{
 			rowTerms[a[i].col]++;
-		}
 
 		// startingPos 계산
 		for (int i = 1; i < a[0].col; i++)
-		{
 			startingPos[i] = startingPos[i - 1] + rowTerms[i-1];
-		}
 
 		// a(i,j) -> b(j,i)
 		int j;
@@ -56,7 +49,6 @@ void fastTranspose(matrix_element a[], matrix_element b[])
 			b[j].value = a[i].value;
 		}
 	}
-
 }
 
 int main(void)
@@ -64,8 +56,8 @@ int main(void)
 	FILE* fp;
 	fp = fopen("a.txt", "r");
 
-	matrix_element a[9];
-	matrix_element b[9];
+	matrixA a[9];
+	matrixA b[9];
 
 	for (int i=0;i<9;i++)
 	{
