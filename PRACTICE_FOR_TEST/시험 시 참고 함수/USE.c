@@ -83,3 +83,28 @@ void fastTranspose(matrixA a[], matrixA b[])
 	}
 }
 
+//미로에서 사용하는 함수 
+void push(element item);
+element pop();
+
+element stackempty() 
+{
+	element item;
+	item.row = -1;
+
+	return item;
+}
+
+void stackFull() 
+{
+	element item;
+	fprintf(stderr, "stack full\n");
+
+	while (top > -1)
+	{
+		item = pop();
+		printf("%d %d %d\n", item.row, item.col, item.dir);
+	}
+
+	exit(EXIT_FAILURE);
+}
