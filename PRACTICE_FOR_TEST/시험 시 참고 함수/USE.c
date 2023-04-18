@@ -108,3 +108,7 @@ void stackFull()
 
 	exit(EXIT_FAILURE);
 }
+
+//이퀄 비교할때 문자열 입력받기
+gets(person1->name, sizeof(char) * 30);
+getchar();

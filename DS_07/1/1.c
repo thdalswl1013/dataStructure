@@ -9,7 +9,7 @@
 typedef enum 
 {
 	lparen, rparen, plus, minus, times, divide, mod, eos, operand
-} precedence;
+} operation;
 
 int top = -1;
 
@@ -17,7 +17,7 @@ int stack[MAX_STACK_SIZE];
 char expression[MAX_EXPRESSION_SIZE];
 
 int eval(void);
-precedence getToken(char* symbol, int* n);
+operation getToken(char* symbol, int* n);
 void push(int item);
 void stackFull();
 int pop();
@@ -49,7 +49,7 @@ int main(void)
 
 int eval(void)
 {
-	precedence token;
+	operation token;
 	char symbol;
 	int op1, op2;
 	int n = 0; 
@@ -89,7 +89,7 @@ int eval(void)
 	return pop();
 }
 
-precedence getToken(char* symbol, int* n)
+operation getToken(char* symbol, int* n)
 {
 	*symbol = expression[(*n)++];
 
