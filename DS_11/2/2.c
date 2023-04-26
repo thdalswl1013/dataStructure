@@ -101,3 +101,15 @@ int main(void)
 }
 
 
+treePointer createNode(char data)
+{
+	treePointer pNode;
+
+	pNode = malloc(sizeof(*pNode));
+
+	pNode->data = data;
+	pNode->leftChild = NULL;
+	pNode->rightChild = NULL;
+
+	return pNode;
+}
