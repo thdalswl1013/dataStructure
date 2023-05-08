@@ -1,0 +1,4 @@
+﻿  2.c
+C:\Users\minji\Documents\vs_c\DS_15\2\2.c(96): warning C4716: 'init_winnerTree': 값을 반환해야 합니다.
+C:\Users\minji\Documents\vs_c\DS_15\2\2.c(87): warning C4715: 'findwinner': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  2.vcxproj -> C:\Users\minji\Documents\vs_c\DS_15\x64\Debug\2.exe
