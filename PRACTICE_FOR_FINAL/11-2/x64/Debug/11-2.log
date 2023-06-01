@@ -1,3 +1,0 @@
-﻿  11-2.c
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\11-2\11-2.c(12,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'node' 왼쪽은 무시됩니다.
-  11-2.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\11-2.exe
