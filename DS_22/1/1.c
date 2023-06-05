@@ -7,7 +7,7 @@
 typedef struct element 
 {
 	int key;
-	char string[MAX_STRING_SIZE];
+	char item[MAX_STRING_SIZE];
 	int empty;
 }element;
 
@@ -30,14 +30,14 @@ int makeHash(char* key)
 int HashAdd(element item, element* ht)
 {
 	int i, value;
-	value = i = makeHash(item.string);
+	value = i = makeHash(item.item);
 
 	while (ht[i].empty == 1) 
 	{
 		i = (i + 1) % TABLE_SIZE; 
 	}
 
-	item.key = stringToint(item.string);
+	item.key = stringToint(item.item);
 	item.empty = 1;
 	ht[i] = item;
 
@@ -48,15 +48,15 @@ int HashSearch(element item, element* ht)
 {
 	int i, value;
 	int cnt = 0;
-	value = i = makeHash(item.string);
+	value = i = makeHash(item.item);
 
 	while (!(ht[i].empty == -1))
 	{
 		cnt++;
 
-		if (strcmp(item.string, ht[i].string) == 0)
+		if (strcmp(item.item, ht[i].item) == 0)
 		{
-			printf("item : %s, key : %d, the number of comparisions : %d\n", ht[i].string, ht[i].key, cnt);
+			printf("item : %s, key : %d, the number of comparisions : %d\n", ht[i].item, ht[i].key, cnt);
 			return 1;
 		}
 
@@ -79,9 +79,9 @@ void HashTablePrint()
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		if (hash_table[i].empty == 0)
-			printf("ht[%2d] : %8s\n", i, hash_table[i].string);
+			printf("ht[%2d] : %8s\n", i, hash_table[i].item);
 		else
-			printf("ht[%2d] : %8s %8d\n", i, hash_table[i].string, hash_table[i].key);
+			printf("ht[%2d] : %8s %8d\n", i, hash_table[i].item, hash_table[i].key);
 	}
 }
 
@@ -97,9 +97,9 @@ int main()
 
 	while (!feof(fp))
 	{
-		fscanf(fp, "%s", &item.string);
+		fscanf(fp, "%s", &item.item);
 		HashAdd(item, hash_table);
-		printf("%s ", item.string);
+		printf("%s ", item.item);
 	}
 	printf("\n\n");
 
@@ -107,7 +107,7 @@ int main()
 
 	printf("\nstring to search >> ");
 	scanf("%s", &search);
-	strcpy(item.string, search);
+	strcpy(item.item, search);
 
 	HashSearch(item, hash_table);
 }

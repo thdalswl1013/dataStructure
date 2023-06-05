@@ -1,3 +1,7 @@
-﻿  22-1.c
-MSVCRTD.lib(exe_main.obj) : error LNK2019: main"int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\22-1.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+﻿  22-1-full.c
+  22-1.c
+  코드를 생성하고 있습니다...
+22-1.obj : error LNK2005: HashAdd이(가) 22-1-full.obj에 이미 정의되어 있습니다.
+22-1.obj : error LNK2005: main이(가) 22-1-full.obj에 이미 정의되어 있습니다.
+22-1.obj : error LNK2005: stringToint이(가) 22-1-full.obj에 이미 정의되어 있습니다.
+C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\22-1.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

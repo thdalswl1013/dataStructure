@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7e1ac8e1-c0e5-463e-98c8-6602b2972ca2}</ProjectGuid>
-    <RootNamespace>My221</RootNamespace>
+    <ProjectGuid>{b3d30502-9d70-4161-89da-6ddca9aaf7ed}</ProjectGuid>
+    <RootNamespace>My221full</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="22-1.c" />
+    <ClCompile Include="22-1-full.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
