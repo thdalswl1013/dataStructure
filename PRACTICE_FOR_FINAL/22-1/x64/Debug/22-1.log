@@ -1,7 +1,2 @@
-﻿  22-1-full.c
-  22-1.c
-  코드를 생성하고 있습니다...
-22-1.obj : error LNK2005: HashAdd이(가) 22-1-full.obj에 이미 정의되어 있습니다.
-22-1.obj : error LNK2005: main이(가) 22-1-full.obj에 이미 정의되어 있습니다.
-22-1.obj : error LNK2005: stringToint이(가) 22-1-full.obj에 이미 정의되어 있습니다.
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\22-1.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
+﻿  22-1.c
+  22-1.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\22-1.exe
