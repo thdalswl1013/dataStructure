@@ -32,18 +32,18 @@ int main(void)
 	printf("the length of input string should be less than 80\n");
 	printf("input string(postfix expression) : ");
 
-	while (!feof(fp))
+	while (EOF!= fscanf(fp, "%c", &input))
 	{
-		fscanf(fp, "%c", &input);
 		printf("%c", input);
 		treePointer temp = NULL;
+		temp = malloc(sizeof(*temp));
+		temp->data = input;
+		temp->leftchild = NULL;
+		temp->rightchild = NULL;
+
+
 		if (input == '+' || input == '-' || input == '/' || input == '*' || input == '%')
 		{
-			temp = malloc(sizeof(*temp));
-			temp->data = input;
-			temp->leftchild = NULL;
-			temp->rightchild = NULL;
-
 			temp->rightchild = pop();
 			temp->leftchild = pop();
 			push(temp);
@@ -51,11 +51,6 @@ int main(void)
 
 		else
 		{
-			temp = malloc(sizeof(*temp));
-			temp->data = input;
-			temp->leftchild = NULL;
-			temp->rightchild = NULL;
-
 			push(temp);
 		}
 	}
