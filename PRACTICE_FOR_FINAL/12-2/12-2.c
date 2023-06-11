@@ -1,3 +1,4 @@
+/*
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
@@ -14,19 +15,79 @@ typedef struct node
 
 treePointer stack[100];
 int top = -1;
-void push(treePointer ptr); 
-treePointer pop();
-
-void iterinorder(treePointer ptr); //LVR
-
 
 treePointer queue[100];
 int front = 0;
 int rear = 0;
-void addq(treePointer ptr);
-treePointer deleteq();
 
-void levelOrder(treePointer ptr);
+
+void push(treePointer ptr)
+{
+	stack[++top] = ptr;
+}
+
+treePointer pop()
+{
+	treePointer temp = NULL;
+	if (top >= 0)
+		temp = stack[top--];
+
+	return temp;
+}
+
+
+void iterinorder(treePointer ptr) //LVR
+{
+	for (;;)
+	{
+		for (; ptr; ptr=ptr->leftChild)//L
+			push(ptr);
+		ptr = pop();
+
+		if (!ptr)
+			break;
+
+		printf("%c", ptr->data);//V
+		ptr = ptr->rightChild;//R
+	}
+}
+
+
+
+void addq(treePointer ptr)
+{
+	queue[rear++] = ptr;
+}
+
+treePointer deleteq()
+{
+	return queue[front++];
+}
+void levelOrder(treePointer ptr)
+{
+	if (!ptr)
+		return;
+
+	addq(ptr);
+
+	for (;;)
+	{
+		ptr = deleteq();
+
+		if (ptr)
+		{
+			printf("%c ", ptr->data);
+			if (ptr->leftChild)
+				addq(ptr->leftChild);
+
+			if (ptr->rightChild)
+				addq(ptr->rightChild);
+		}
+		else
+			break;
+	}
+}
+
 
 int main(void)
 {
@@ -40,7 +101,7 @@ int main(void)
 	while (EOF!=fscanf(fp, "%c", &input))
 	{
 		printf("%c", input);
-		
+
 		treePointer temp = NULL ;
 
 		temp = malloc(sizeof(*temp));
@@ -71,7 +132,7 @@ int main(void)
 
 	printf("\n스택에 들어가는 데이터의 순서	: ");
 	top = -1;
-	
+
 	for (;;)
 	{
 		for (; tree; tree = tree->leftChild)
@@ -95,73 +156,8 @@ int main(void)
 
 	printf("\n");
 	return 0;
-	
+
 }
 
 
-void push(treePointer ptr)
-{
-	stack[++top] = ptr;
-}
-
-treePointer pop()
-{
-	treePointer temp=NULL;
-	if (top >= 0)
-		temp=stack[top--];
-
-	return temp;
-}
-
-
-void iterinorder(treePointer ptr) //LVR
-{
-	for (;;)
-	{
-		for (; ptr; ptr->leftChild)//L
-			push(ptr);
-		ptr = pop();
-
-		if (!ptr)
-			break;
-
-		printf("%c", ptr->data);//V
-		ptr = ptr->rightChild;//R
-	}
-}
-
-
-
-void addq(treePointer ptr)
-{
-	queue[rear++] = ptr;
-}
-
-treePointer deleteq()
-{
-	return queue[front++];
-}
-void levelOrder(treePointer ptr)
-{
-	if(!ptr)
-		return;
-
-	add(ptr);
-
-	for (;;)
-	{
-		ptr = deleteq();
-
-		if (ptr) 
-		{
-			printf("%c ", ptr->data);
-			if (ptr->leftChild)
-				addq(ptr->leftChild);
-			
-			if (ptr->rightChild)
-				addq(ptr->rightChild);
-		}
-		else 
-			break;
-	}
-}
+*/

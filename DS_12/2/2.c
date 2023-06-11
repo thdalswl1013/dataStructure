@@ -117,8 +117,10 @@ void iterinorder(treePointer node)
 
 void printiterInorder(treePointer node)
 {
-	for (;;) {
-		for (; node; node = node->leftchild) {
+	for (;;) 
+	{
+		for (; node; node = node->leftchild)
+		{
 			printf("%c ", node->data);
 			push(node);
 		}
