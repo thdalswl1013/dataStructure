@@ -10,7 +10,7 @@ typedef struct element
 	char item[10];
 	int empty;
 }element;
-element hash_table[11];
+element ht[11];
 
 unsigned int stringToint(char* key);
 int HashAdd(element item, element* ht);
@@ -26,7 +26,7 @@ int main(void)
 	while (!feof(fp))
 	{
 		fscanf(fp, "%s", &item.item);		
-		HashAdd(item, hash_table);
+		HashAdd(item, ht);
 		printf("%s  ", item.item);
 	}
 	printf("\n\n");
@@ -35,10 +35,10 @@ int main(void)
 	printf("             item      key\n");
 	for (int i = 0; i < 11; i++)
 	{
-		if (hash_table[i].empty == 0)
-			printf("ht[%2d] : %8s\n", i, hash_table[i].item);
+		if (ht[i].empty == 0)
+			printf("ht[%2d] : %8s\n", i, ht[i].item);
 		else
-			printf("ht[%2d] : %8s %8d\n", i, hash_table[i].item, hash_table[i].key);
+			printf("ht[%2d] : %8s %8d\n", i, ht[i].item, ht[i].key);
 	}
 
 

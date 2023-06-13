@@ -1,0 +1,3 @@
+﻿  1_tree.c
+C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL_2\final_test_tree\1_tree.c(15,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'node' 왼쪽은 무시됩니다.
+  final_test_tree.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL_2\x64\Debug\final_test_tree.exe
