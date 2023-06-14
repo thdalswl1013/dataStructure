@@ -7,7 +7,7 @@
 typedef struct node* nodePointer;
 typedef struct node
 {
-	char item[10];
+	char item[10];   
 	int key;
 	nodePointer link;
 };

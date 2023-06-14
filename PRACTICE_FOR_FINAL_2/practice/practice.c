@@ -1,122 +1,91 @@
-#define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-
-typedef struct node* treePointer;
-typedef struct node
+int hasing(char input[])
 {
-	int key;
-	char name[10];
-	int score;
-	treePointer link;
-};
-
-treePointer tree[100];
-
-void inorder(int n);
-void insert(treePointer temp, int i);
-
-int main(void)
-{
-	FILE* fp;
-	fp = fopen("input.txt", "r");
-
-	int num;
-	fscanf(fp, "%d", &num);
-
-	treePointer temp;
-	
-	for (int i = 1; i <= num; i++)
+	int num = 0;
+	while (*input)
 	{
-		temp = (treePointer)malloc(sizeof(*temp));
-		fscanf(fp, "%d %s %d", &temp->key, &temp->name, &temp->score);
-		//printf("%d %s %d\n", temp->key, temp->name, temp->score);
-		insert(temp, i);
+		num += *input;
+		input++;
 	}
-
-	int input;
-	printf("찾을 학생의 key를 입력하세요: ");
-	scanf("%d", &input);
-
-	for (int i = 1; i <= num*2;i++)
-	{
-		if (tree[i]->key == input)
-		{
-			printf("%d %s %d\n", tree[i]->key, tree[i]->name, tree[i]->score);
-
-			if(tree[2*i])
-				printf("		왼   자식: %d %s %d\n", tree[i * 2]->key, tree[i * 2]->name, tree[i * 2]->score);
-			if(tree[2*i+1])
-				printf("		오른 자식: %d %s %d\n", tree[i * 2 + 1]->key, tree[i * 2 + 1]->name, tree[i * 2 + 1]->score);
-			break;
-		}
-	}
-
-	printf("inorder\n");
-	inorder(1);
-
-	printf("levelorder\n");
-	for (int i = 1; i <= num * 2; i++)
-	{
-		if (tree[i])
-			printf("%-3d, %d %s %d\n", i, tree[i]->key, tree[i]->name, tree[i]->score);
-	}
-
-	return 0;
+	return num;
 }
 
-void inorder(int n)
+int HashAdd(element temp, element* ht)
 {
-	if (tree[n])
+	int i, value;
+	value = i = stringToint(temp.item) % 11;
+
+	while (ht[i].empty == 1) // 해시 테이블이 채워져있으면
 	{
-		inorder(2 * n);
-		printf("%d %s %d\n", tree[n]->key, tree[n]->name, tree[n]->score);
-		inorder(2 * n + 1);
+		i = (i + 1) % 11; // 옆 칸으로 이동 후 버킷 수 만큼 나눠
+	}
+
+	temp.key = hasing(temp.item);
+	temp.empty = 1; // temp 값이 채워져있다고 바꿔준 후
+	ht[i] = temp; // ht[i]에 집어넣어
+
+	return 1;
+}
+
+그래프 insert
+
+
+
+void insert(int x, int y)
+{
+	nodePointer temp;
+	temp = (nodePointer)malloc(sizeof(*temp));
+	temp->data = y;
+
+	if (graph[x])
+	{
+		temp->link = graph[x];
+		graph[x] = temp;
+	}
+
+	else
+	{
+		temp->link = NULL;
+		graph[x] = temp;
 	}
 }
 
-void insert(treePointer temp, int i)
+
+------------------------------------------------------
+
+printf("adjacency list\n");
+
+for (int i = 0; i < vertex; i++)
 {
-	int parent = 1;
-	int child = 2;
+	printf("\nadjList[%d]: ", i);
 
-	if (i == 1)
+	for (nodePointer ptr = graph[i]; ptr; ptr = ptr->link)
+		printf("%3d", ptr->data);
+}
+-------------------------------------------------------------- -
+
+
+
+void dfs(int v)
+{
+	found[v] = 1;
+	printf("%3d", v);
+
+	for (nodePointer ptr = graph[v]; ptr; ptr = ptr->link)
 	{
-		tree[parent] = temp;
-		return;
-	}
-
-
-	for (;;)
-	{
-		if (temp->key > tree[parent]->key)
-		{
-			if (tree[child + 1])
-			{
-				parent = child + 1;
-				child = parent * 2;
-			}
-			else
-			{
-				tree[child + 1] = temp;
-				break;
-			}
-		}
-		else
-		{
-			if (tree[child])
-			{
-				parent = child;
-				child = parent * 2;
-			}
-			else
-			{
-				tree[child] = temp;
-				break;
-			}
-		}
+		if (!found[ptr->data])
+			dfs(ptr->data);
 	}
 }
+-------------------------------------------------------------- -
+int cnt = 1;
+
+for (int i = 0; i < vertex; i++)
+{
+	if (!found[i])
+	{
+		printf("\nconnected %d: ", cnt++);
+		dfs(i);
+	}
+}
+
