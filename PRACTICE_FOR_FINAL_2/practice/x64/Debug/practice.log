@@ -1,3 +1,0 @@
-﻿  practice.c
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL_2\practice\practice.c(15,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'node' 왼쪽은 무시됩니다.
-  practice.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL_2\x64\Debug\practice.exe

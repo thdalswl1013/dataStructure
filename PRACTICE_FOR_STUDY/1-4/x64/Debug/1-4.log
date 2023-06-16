@@ -1,3 +1,0 @@
-﻿  1-4.c
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\1-4\1-4.c(13,2): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  1-4.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_STUDY\x64\Debug\1-4.exe

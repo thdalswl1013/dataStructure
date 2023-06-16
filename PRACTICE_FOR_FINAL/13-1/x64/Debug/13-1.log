@@ -1,3 +1,0 @@
-﻿  13-1.c
-C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\13-1\13-1.c(140,10): warning C4013: 'getToken'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  13-1.vcxproj -> C:\Users\minji\Documents\vs_c\PRACTICE_FOR_FINAL\x64\Debug\13-1.exe
