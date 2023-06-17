@@ -1,0 +1,3 @@
+﻿  2.c
+C:\Users\gkswo\OneDrive\바탕 화면\2020116737-한재준\Final test\Project2\2.c(11,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'node' 왼쪽은 무시됩니다.
+  Project2.vcxproj -> C:\Users\gkswo\OneDrive\바탕 화면\2020116737-한재준\Final test\Debug\2.exe
